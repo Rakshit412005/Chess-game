@@ -25,6 +25,9 @@ io.on("connection",function(socket){
     socket.on("hello",function(){
         console.log("hello recieved");
     });
+    socket.on("disconnect",function(){
+        console.log("disconnected");
+    })
 });
 
 server.listen(3000,function(){
