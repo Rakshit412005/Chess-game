@@ -49,7 +49,7 @@ io.on("connection",function(uniquesocket){
     
     uniquesocket.on("move",(move)=>{
         try{
-            if(chess.turn()==='w' && uniquesocket.id !== player.white) return; // checking white ka turn hai to white hee chal rha hai na
+            if(chess.turn()==='w' && uniquesocket.id !== players.white) return; // checking white ka turn hai to white hee chal rha hai na
             if(chess.turn()==='b' && uniquesocket.id !== players.black) return; // checking black ka turn hai to black hee chal rha hai na
 
             const result = chess.move(move); // move ko result m store krliya
@@ -61,6 +61,7 @@ io.on("connection",function(uniquesocket){
             else {
                 console.log("Invalid move : ", move);
                 uniquesocket.emit("invalidMove",move);
+                return;
             }
         }
        catch(err){
