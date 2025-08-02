@@ -2,8 +2,8 @@
             display: grid;
             grid-template-columns: repeat(8, minmax(0, 1fr));
             grid-template-rows: repeat(8, minmax(0, 1fr));
-            width: 400px;
-            height: 400px;
+            width: 500px;
+            height: 500px;
             transform: rotate(0deg);
         }
 
